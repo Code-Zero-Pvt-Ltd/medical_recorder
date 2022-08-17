@@ -46,73 +46,31 @@ class _MainActivityState extends State<MainActivity> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-              ),ListTile(
-                leading: Icon(Icons.add_box_rounded),
-                title: Text('Add New Records'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
               ),
-              ListTile(
-                leading: Icon(Icons.view_list),
-                title: Text('View Records'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.view_list),
-                title: Text('View Doctors'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.view_list),
-                title: Text('View Nurses'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.view_list),
-                title: Text('View Patients'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text('Settings'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),ListTile(
-                leading: Icon(Icons.question_mark_rounded),
-                title: Text('FAQ'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.people_alt_rounded),
-                title: Text('About Us'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.phone_in_talk_rounded),
-                title: Text('Contact Us'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
+              buildListTile('Settings', Icons.settings),
+              buildListTile('Add New Records', Icons.add_box_rounded),
+              buildListTile('View Records', Icons.view_list),
+              buildListTile('View Doctors', Icons.view_list),
+              buildListTile('View Nurses', Icons.view_list),
+              buildListTile('View Patients', Icons.view_list),
+              buildListTile('Settings', Icons.settings),
+              buildListTile('FAQ', Icons.question_mark_rounded),
+              buildListTile('About Us', Icons.people_alt_rounded),
+              buildListTile('Contact Us', Icons.phone_in_talk_rounded),
             ],
           ),
         ),
       ),
     );
+  }
 
+  Widget buildListTile(String title, IconData icon) {
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(title),
+      onTap: () {
+        Navigator.pop(context);
+      },
+    );
   }
 }
