@@ -40,48 +40,69 @@ class _MainActivityState extends State<MainActivity> {
                 ),
               ),
               ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Back to Home'),
+                trailing: Icon(Icons.arrow_back_ios),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),ListTile(
+                leading: Icon(Icons.add_box_rounded),
                 title: Text('Add New Records'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
+                leading: Icon(Icons.view_list),
                 title: Text('View Records'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
+                leading: Icon(Icons.view_list),
                 title: Text('View Doctors'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
+                leading: Icon(Icons.view_list),
                 title: Text('View Nurses'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
+                leading: Icon(Icons.view_list),
                 title: Text('View Patients'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
+                leading: Icon(Icons.settings),
                 title: Text('Settings'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),ListTile(
+                leading: Icon(Icons.question_mark_rounded),
+                title: Text('FAQ'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
+                leading: Icon(Icons.people_alt_rounded),
                 title: Text('About Us'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
+                leading: Icon(Icons.phone_in_talk_rounded),
                 title: Text('Contact Us'),
                 onTap: () {
                   Navigator.pop(context);
