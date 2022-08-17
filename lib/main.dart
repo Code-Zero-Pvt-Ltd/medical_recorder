@@ -30,36 +30,40 @@ class _MainActivityState extends State<MainActivity> {
         body: Center(
           child: Text('Hello World'),
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: <Widget>[
-              DrawerHeader(
-                child: Text('Medical Recorder'),
-                decoration: BoxDecoration(
-                  color: Colors.lightBlue,
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.home),
-                title: Text('Back to Home'),
-                trailing: Icon(Icons.arrow_back_ios),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              buildListTile('Settings', Icons.settings),
-              buildListTile('Add New Records', Icons.add_box_rounded),
-              buildListTile('View Records', Icons.view_list),
-              buildListTile('View Doctors', Icons.view_list),
-              buildListTile('View Nurses', Icons.view_list),
-              buildListTile('View Patients', Icons.view_list),
-              buildListTile('Settings', Icons.settings),
-              buildListTile('FAQ', Icons.question_mark_rounded),
-              buildListTile('About Us', Icons.people_alt_rounded),
-              buildListTile('Contact Us', Icons.phone_in_talk_rounded),
-            ],
+        drawer: buildDrawer(context),
+      ),
+    );
+  }
+
+  Widget buildDrawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          DrawerHeader(
+            child: Text('Medical Recorder'),
+            decoration: BoxDecoration(
+              color: Colors.lightBlue,
+            ),
           ),
-        ),
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Back to Home'),
+            trailing: Icon(Icons.arrow_back_ios),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          buildListTile('Settings', Icons.settings),
+          buildListTile('Add New Records', Icons.add_box_rounded),
+          buildListTile('View Records', Icons.view_list),
+          buildListTile('View Doctors', Icons.view_list),
+          buildListTile('View Nurses', Icons.view_list),
+          buildListTile('View Patients', Icons.view_list),
+          buildListTile('Settings', Icons.settings),
+          buildListTile('FAQ', Icons.question_mark_rounded),
+          buildListTile('About Us', Icons.people_alt_rounded),
+          buildListTile('Contact Us', Icons.phone_in_talk_rounded),
+        ],
       ),
     );
   }
