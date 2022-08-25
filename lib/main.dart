@@ -1,7 +1,6 @@
 // Copyright 2018 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,152 +17,119 @@ class MainActivity extends StatefulWidget {
 class _MainActivityState extends State<MainActivity> {
   @override
   Widget build(BuildContext context) {
-    Widget titleSection = Container(
-      padding: const EdgeInsets.all(32),
-      child: Row(
-        children: [
-          Expanded(
-            /*1*/
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                /*2*/
-                Container(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: const Text(
-                    'Oeschinen Lake Campground',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Text(
-                  'Kandersteg, Switzerland',
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          /*3*/
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          const Text('41'),
-        ],
-      ),
-    );
-
-    Color color = Theme.of(context).primaryColor;
-
-    Widget buttonSection = Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        _buildButtonColumn(color, Icons.call, 'CALL'),
-        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
-        _buildButtonColumn(color, Icons.share, 'SHARE'),
-      ],
-    );
-
-    Widget textSection = const Padding(
-      padding: EdgeInsets.all(32),
-      child: Text(
-        'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-            'Alps. Situated 1,578 meters above sea level, it is one of the '
-            'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-            'half-hour walk through pastures and pine forest, leads you to the '
-            'lake, which warms to 20 degrees Celsius in the summer. Activities '
-            'enjoyed here include rowing, and riding the summer toboggan run.',
-        softWrap: true,
-      ),
-    );
-
     return MaterialApp(
       title: 'Medical Recorder',
       theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.lightBlue[800],
         primarySwatch: Colors.lightBlue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Dashboard'),
+        fontFamily: 'Roboto',
+        textTheme: const TextTheme(
+          bodyText1: TextStyle(fontSize: 18),
+          bodyText2: TextStyle(fontSize: 16),
+          headline1: TextStyle(fontSize: 24),
+          headline2: TextStyle(fontSize: 22),
+          headline3: TextStyle(fontSize: 20),
+          headline4: TextStyle(fontSize: 18),
+          headline5: TextStyle(fontSize: 16),
+          headline6: TextStyle(fontSize: 14),
+          subtitle1: TextStyle(fontSize: 22),
+          subtitle2: TextStyle(fontSize: 20),
+          button: TextStyle(fontSize: 18),
+          caption: TextStyle(fontSize: 16),
+          overline: TextStyle(fontSize: 14),
         ),
-        body: ListView(
-          children: [
-            Image.asset(
-              'images/lake.jpg',
-              width: 600,
-              height: 240,
-              fit: BoxFit.cover,
+      ),
+      home: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(tabs: [
+              Tab(icon: Icon(Icons.dataset_outlined), text: 'Records'),
+              Tab(icon: Icon(Icons.person_pin_outlined), text: 'Doctors',),
+              Tab(icon: Icon(Icons.people_alt_outlined), text: 'Nurses',),
+              Tab(icon: Icon(Icons.wheelchair_pickup_rounded), text: 'Patients',),
+            ]),
+            title: const Text('Dashboard'),
+          ),
+          body: const TabBarView(
+            children: [
+              Icon(Icons.dataset_outlined),
+              Icon(Icons.person_pin_outlined),
+              Icon(Icons.people_alt_outlined),
+              Icon(Icons.wheelchair_pickup_rounded),
+            ],
+          ),
+          floatingActionButton: Theme(
+            data: Theme.of(context).copyWith(
+              colorScheme: Theme.of(context).colorScheme.copyWith(
+                secondary: Colors.lightBlue[800],
+              ),
             ),
-            titleSection,
-            buttonSection,
-            textSection,
-          ],
-        ),
-        drawer: _buildDrawer(context),
-      ),
-    );
-  }
-
-  Column _buildButtonColumn(Color color, IconData icon, String label) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, color: color),
-        Container(
-          margin: const EdgeInsets.only(top: 8),
-          child: Text(
-            label,
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: color,
+            child: FloatingActionButton(
+              onPressed: () {},
+              child: const Icon(Icons.add),
             ),
           ),
+          drawer: _buildDrawer(context),
+          bottomNavigationBar: BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.update),
+                label: 'Update',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.add_circle),
+                label: 'Add',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.delete_forever_rounded),
+                label: 'Delete',
+              ),
+            ],
+          ),
         ),
-      ],
+      ),
     );
   }
 
   Widget _buildDrawer(BuildContext context) {
     return Drawer(
       child: ListView(
+        padding: EdgeInsets.zero,
         children: <Widget>[
           const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.lightBlue,
-              ),
-              child: Image(
-                image: AssetImage('images/logo_black.png'),
-                fit: BoxFit.cover,
-              ),
+            decoration: BoxDecoration(
+              color: Colors.lightBlue,
+            ),
+            child: Image(
+              image: AssetImage('images/logo_black.png'),
+              fit: BoxFit.cover,
+            ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Back to Home'),
-            trailing: Icon(Icons.arrow_back_ios),
+            leading: const Icon(Icons.home),
+            title: const Text('Back to Home'),
+            trailing: const Icon(Icons.arrow_back_ios),
             onTap: () {
               Navigator.pop(context);
             },
           ),
-          _buildListTile('Add New Records', Icons.add_box_rounded),
-          _buildListTile('View Records', Icons.view_list),
-          _buildListTile('View Doctors', Icons.view_list),
-          _buildListTile('View Nurses', Icons.view_list),
-          _buildListTile('View Patients', Icons.view_list),
-          _buildListTile('Settings', Icons.settings),
-          _buildListTile('FAQ', Icons.question_mark_rounded),
-          _buildListTile('About Us', Icons.people_alt_rounded),
-          _buildListTile('Contact Us', Icons.phone_in_talk_rounded),
+          // _buildDrawerListTile('Add New Records', Icons.add_box_rounded),
+          // _buildDrawerListTile('View Records', Icons.view_list),
+          // _buildDrawerListTile('View Doctors', Icons.view_list),
+          // _buildDrawerListTile('View Nurses', Icons.view_list),
+          // _buildDrawerListTile('View Patients', Icons.view_list),
+          _buildDrawerListTile('Settings', Icons.settings),
+          _buildDrawerListTile('FAQ', Icons.question_mark_rounded),
+          _buildDrawerListTile('About Us', Icons.people_alt_rounded),
+          _buildDrawerListTile('Contact Us', Icons.phone_in_talk_rounded),
         ],
       ),
     );
   }
 
-  Widget _buildListTile(String title, IconData icon) {
+  Widget _buildDrawerListTile(String title, IconData icon) {
     return ListTile(
       leading: Icon(icon),
       title: Text(title),

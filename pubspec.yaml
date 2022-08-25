@@ -1,5 +1,5 @@
-name: medical_record
-description: A new Flutter project.
+name: medical_recorder
+description: A data storage and analysis tool for medical data.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
