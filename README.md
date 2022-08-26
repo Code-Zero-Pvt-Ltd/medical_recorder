@@ -1,16 +1,61 @@
-# medical_recorder
+## Author
+[]: # Name: Prarup Gurung
+[]: # Email: grgprarup@gmail.com
+[]: # Organization: Code Zero Pvt. Ltd.
+[]: # Website: https://codezeronepal.com
+[]: # Website: https://www.prarupgurung.com.np
+[]: # GitHub: https://github.com/grgprarup
+[]: # Language: markdown
+[]: # Path: README.md
 
-A new Flutter project.
+# Medical Recorder
 
-## Getting Started
+This is a flutter based application. This application is used to store the details of the patients, the doctors and the nurses. Also the records of the patients history are stored. Further more analysis of records will be done.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+### Patient Details
+    - Add Patient
+    - Edit Patient
+    - Delete Patient
+    - View Patient
+    - Search Patient
+    - Export Patient
+    - Import Patient
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Doctor Details
+    - Add Doctor
+    - Edit Doctor
+    - Delete Doctor
+    - View Doctor
+    - Search Doctor
+    - Export Doctor
+    - Import Doctor
 
+### Nurse Details
+    - Add Nurse
+    - Edit Nurse
+    - Delete Nurse
+    - View Nurse
+    - Search Nurse
+    - Export Nurse
+    - Import Nurse
+
+## Installation
+
+## Usage
+
+## Tests
+
+## Future Work
+
+## Version History
+
+## Contributing Guidelines
+
+## License
+
+## References
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
