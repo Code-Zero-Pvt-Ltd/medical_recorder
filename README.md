@@ -1,16 +1,27 @@
-# medical_recorder
+## Author
 
-A new Flutter project.
+# Medical Recorder
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+### Patient Details
+    
+### Doctor Details
+   
+### Nurse Details
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Usage
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tests
+
+## Future Work
+
+## Version History
+
+## Contributing Guidelines
+
+## License
+
+## References
