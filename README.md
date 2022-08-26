@@ -15,10 +15,31 @@ This is a flutter based application. This application is used to store the detai
 ## Features
 
 ### Patient Details
-    
+    - Add Patient
+    - Edit Patient
+    - Delete Patient
+    - View Patient
+    - Search Patient
+    - Export Patient
+    - Import Patient
+
 ### Doctor Details
-   
+    - Add Doctor
+    - Edit Doctor
+    - Delete Doctor
+    - View Doctor
+    - Search Doctor
+    - Export Doctor
+    - Import Doctor
+
 ### Nurse Details
+    - Add Nurse
+    - Edit Nurse
+    - Delete Nurse
+    - View Nurse
+    - Search Nurse
+    - Export Nurse
+    - Import Nurse
 
 ## Installation
 
