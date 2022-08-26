@@ -1,4 +1,4 @@
-# medical_record
+# medical_recorder
 
 A new Flutter project.
 
