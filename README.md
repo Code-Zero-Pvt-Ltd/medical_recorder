@@ -10,6 +10,8 @@
 
 # Medical Recorder
 
+This is a flutter based application. This application is used to store the details of the patients, the doctors and the nurses. Also the records of the patients history are stored. Further more analysis of records will be done.
+
 ## Features
 
 ### Patient Details
