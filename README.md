@@ -56,3 +56,6 @@ This is a flutter based application. This application is used to store the detai
 ## License
 
 ## References
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
