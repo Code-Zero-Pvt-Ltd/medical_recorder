@@ -184,7 +184,7 @@ class ExpandableFab extends StatefulWidget {
   });
 
   final bool? initialOpen;
-  final double? distance;
+  final double distance;
   final List<Widget> children;
 
   @override
