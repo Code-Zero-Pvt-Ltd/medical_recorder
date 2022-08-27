@@ -46,9 +46,18 @@ class _MainActivityState extends State<MainActivity> {
           appBar: AppBar(
             bottom: const TabBar(tabs: [
               Tab(icon: Icon(Icons.dataset_outlined), text: 'Records'),
-              Tab(icon: Icon(Icons.person_pin_outlined), text: 'Doctors',),
-              Tab(icon: Icon(Icons.people_alt_outlined), text: 'Nurses',),
-              Tab(icon: Icon(Icons.wheelchair_pickup_rounded), text: 'Patients',),
+              Tab(
+                icon: Icon(Icons.person_pin_outlined),
+                text: 'Doctors',
+              ),
+              Tab(
+                icon: Icon(Icons.people_alt_outlined),
+                text: 'Nurses',
+              ),
+              Tab(
+                icon: Icon(Icons.wheelchair_pickup_rounded),
+                text: 'Patients',
+              ),
             ]),
             title: const Text('Dashboard'),
           ),
@@ -63,8 +72,8 @@ class _MainActivityState extends State<MainActivity> {
           floatingActionButton: Theme(
             data: Theme.of(context).copyWith(
               colorScheme: Theme.of(context).colorScheme.copyWith(
-                secondary: Colors.lightBlue[800],
-              ),
+                    secondary: Colors.lightBlue[800],
+                  ),
             ),
             child: FloatingActionButton(
               onPressed: () {},
@@ -137,5 +146,29 @@ class _MainActivityState extends State<MainActivity> {
         Navigator.pop(context);
       },
     );
+  }
+}
+
+@immutable
+class ExpandableFab extends StatefulWidget {
+  const ExpandableFab({
+    super.key,
+    this.initialOpen,
+    required this.distance,
+    required this.children,
+  });
+
+  final bool? initialOpen;
+  final double? distance;
+  final List<Widget> children;
+
+  @override
+  State<ExpandableFab> createState() => _ExpandableFabState();
+}
+
+class _ExpandableFabState extends State<ExpandableFab> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
