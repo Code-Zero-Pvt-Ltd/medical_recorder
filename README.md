@@ -1,9 +1,9 @@
 ## Author
-[Prarup Gurung](https://github.com/grgprarup)
-[Email: grgprarup@gmail.com]
-[Organization: Code Zero Pvt. Ltd.] 
-[Organization Website](https://codezeronepal.com)
-[Personal Website](https://www.prarupgurung.com.np)
+- [Prarup Gurung](https://github.com/grgprarup)
+- [Email: grgprarup@gmail.com]
+- [Organization: Code Zero Pvt. Ltd.] 
+- [Organizational Website](https://codezeronepal.com)
+- [Personal Website](https://www.prarupgurung.com.np)
 
 # Medical Recorder
 
