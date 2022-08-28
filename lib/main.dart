@@ -86,7 +86,7 @@ class _MainActivityState extends State<MainActivity> {
           body: const TabBarView(
             children: [
               Icon(Icons.dataset_outlined),
-              AddDoctorForm(),
+              const AddDoctorForm(),
               Icon(Icons.people_alt_outlined),
               Icon(Icons.wheelchair_pickup_rounded),
             ],
