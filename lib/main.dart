@@ -4,6 +4,8 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
+import 'package:medical_recorder/add_doctor_form.dart';
+
 void main() {
   runApp(const MainActivity());
 }
@@ -17,7 +19,8 @@ class MainActivity extends StatefulWidget {
 
 class _MainActivityState extends State<MainActivity> {
   static const _actionTitles = ['Create Post', 'Upload Photo', "Upload Video"];
-  void _showAction(BuildContext context, int index){
+
+  void _showAction(BuildContext context, int index) {
     showDialog<void>(
       context: context,
       builder: (context) {
@@ -25,8 +28,8 @@ class _MainActivityState extends State<MainActivity> {
           content: Text(_actionTitles[index]),
           actions: [
             TextButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: const Text("CLOSE"),
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text("CLOSE"),
             ),
           ],
         );
@@ -78,12 +81,12 @@ class _MainActivityState extends State<MainActivity> {
                 text: 'Patients',
               ),
             ]),
-            title: const Text('Dashboard'),
+            title: const Text('Medical Recorder'),
           ),
           body: const TabBarView(
             children: [
               Icon(Icons.dataset_outlined),
-              Icon(Icons.person_pin_outlined),
+              AddDoctorForm(),
               Icon(Icons.people_alt_outlined),
               Icon(Icons.wheelchair_pickup_rounded),
             ],
@@ -222,7 +225,7 @@ class _ExpandableFabState extends State<ExpandableFab>
   void _toggle() {
     setState(() {
       _open = !_open;
-      if (_open){
+      if (_open) {
         _controller.forward();
       } else {
         _controller.reverse();
@@ -245,7 +248,7 @@ class _ExpandableFabState extends State<ExpandableFab>
     );
   }
 
-  List<Widget> _buildExpandingActionButtons(){
+  List<Widget> _buildExpandingActionButtons() {
     final children = <Widget>[];
     final count = widget.children.length;
     final step = 90.0 / (count - 1);
@@ -279,7 +282,9 @@ class _ExpandableFabState extends State<ExpandableFab>
                     padding: const EdgeInsets.all(8.0),
                     child: Icon(
                       Icons.close,
-                      color: Theme.of(context).primaryColor,
+                      color: Theme
+                          .of(context)
+                          .primaryColor,
                     ))),
           ),
         ));
@@ -346,7 +351,7 @@ class _ExpandingActionButton extends StatelessWidget {
     required this.maxDistance,
     required this.progress,
     required this.child,
-});
+  });
 
   final double directionInDegrees;
   final double maxDistance;
