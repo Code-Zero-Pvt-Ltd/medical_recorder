@@ -18,6 +18,7 @@ class _AddDoctorFormState extends State<AddDoctorForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           _textFieldGenerator('First Name', Icons.person),
+          _textFieldGenerator('Middle Name', Icons.person),
           _textFieldGenerator('Last Name', Icons.person),
           _textFieldGenerator('Email', Icons.email),
           Padding(

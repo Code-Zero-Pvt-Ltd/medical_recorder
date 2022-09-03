@@ -86,7 +86,7 @@ class _MainActivityState extends State<MainActivity> {
           body: const TabBarView(
             children: [
               Icon(Icons.dataset_outlined),
-              const AddDoctorForm(),
+              AddDoctorForm(),
               Icon(Icons.people_alt_outlined),
               Icon(Icons.wheelchair_pickup_rounded),
             ],
@@ -96,15 +96,15 @@ class _MainActivityState extends State<MainActivity> {
             children: [
               ActionButton(
                 onPressed: () => _showAction(context, 0),
-                icon: const Icon(Icons.format_size),
+                icon: const Icon(Icons.edit),
               ),
               ActionButton(
                 onPressed: () => _showAction(context, 1),
-                icon: const Icon(Icons.insert_photo),
+                icon: const Icon(Icons.add_circle),
               ),
               ActionButton(
                 onPressed: () => _showAction(context, 2),
-                icon: const Icon(Icons.videocam),
+                icon: const Icon(Icons.delete_forever_rounded),
               ),
             ],
           ),
