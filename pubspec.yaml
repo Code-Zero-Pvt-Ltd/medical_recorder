@@ -58,11 +58,25 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - images/lake.jpg
-    - images/logo.png
-    - images/logo_black.png
-    - images/logo_transparent.png
-    - images/logo_white.png
+    # Custom fonts files
+#    - assets/fonts/Roboto-Regular.ttf
+
+    # Language translation files
+#    - assets/lang/en.json
+#    - assets/lang/zh.json
+
+    # HTML files
+#    - assets/html/privacy_policy.html
+#    - assets/html/privacy_policy.html
+#    - assets/html/terms_of_use.html
+#    - assets/html/cookies_policy.html
+
+    # Images
+    - assets/images/lake.jpg
+    - assets/images/logo.png
+    - assets/images/logo_black.png
+    - assets/images/logo_transparent.png
+    - assets/images/logo_white.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
