@@ -17,30 +17,10 @@ class _AddDoctorFormState extends State<AddDoctorForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter your name',
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                hintText: 'Enter your email',
-              ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-            ),
-          ),
+          _textFieldGenerator('First Name', Icons.person),
+          _textFieldGenerator('Middle Name', Icons.person),
+          _textFieldGenerator('Last Name', Icons.person),
+          _textFieldGenerator('Email', Icons.email),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
@@ -58,4 +38,24 @@ class _AddDoctorFormState extends State<AddDoctorForm> {
       ),
     );
   }
+
+  Widget _textFieldGenerator(String  hintText, IconData icon) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+      child: TextFormField(
+        decoration: InputDecoration(
+            border: const UnderlineInputBorder(),
+            hintText: hintText,
+            icon: Icon(icon),
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return '$hintText is required';
+          }
+          return null;
+        },
+      ),
+    );
+  }
+
 }
