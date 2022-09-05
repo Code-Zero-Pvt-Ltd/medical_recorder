@@ -31,11 +31,6 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               Navigator.pop(context);
             },
           ),
-          // _buildDrawerListTile('Add New Records', Icons.add_box_rounded),
-          // _buildDrawerListTile('View Records', Icons.view_list),
-          // _buildDrawerListTile('View Doctors', Icons.view_list),
-          // _buildDrawerListTile('View Nurses', Icons.view_list),
-          // _buildDrawerListTile('View Patients', Icons.view_list),
           _buildDrawerListTile('Settings', Icons.settings),
           _buildDrawerListTile('FAQ', Icons.question_mark_rounded),
           _buildDrawerListTile('About Us', Icons.people_alt_rounded),
