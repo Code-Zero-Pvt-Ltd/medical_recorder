@@ -23,14 +23,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               fit: BoxFit.cover,
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Back to Home'),
-            trailing: const Icon(Icons.arrow_back_ios),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          _buildDrawerListTile('Back to Home', Icons.home, Icons.arrow_back_ios),
           _buildDrawerListTile('Settings', Icons.settings),
           _buildDrawerListTile('FAQ', Icons.question_mark_rounded),
           _buildDrawerListTile('About Us', Icons.people_alt_rounded),
@@ -39,10 +32,12 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
       ),
     );
   }
-  Widget _buildDrawerListTile(String title, IconData icon) {
+
+  Widget _buildDrawerListTile(String title, IconData leadingIcon, [IconData? trailingIcon]) {
     return ListTile(
-      leading: Icon(icon),
+      leading: Icon(leadingIcon),
       title: Text(title),
+      trailing: Icon(trailingIcon),
       onTap: () {
         Navigator.pop(context);
       },
