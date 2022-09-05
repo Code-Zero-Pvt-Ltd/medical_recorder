@@ -5,7 +5,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import 'package:medical_recorder/add_doctor_form.dart';
-
+import 'package:medical_recorder/widgets/navigation_drawer.dart';
 void main() {
   runApp(const MainActivity());
 }
@@ -108,7 +108,7 @@ class _MainActivityState extends State<MainActivity> {
               ),
             ],
           ),
-          drawer: _buildDrawer(context),
+          drawer: const NavigationDrawer(),
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -127,52 +127,6 @@ class _MainActivityState extends State<MainActivity> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildDrawer(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.lightBlue,
-            ),
-            child: Image(
-              image: AssetImage('images/logo_black.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Back to Home'),
-            trailing: const Icon(Icons.arrow_back_ios),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          // _buildDrawerListTile('Add New Records', Icons.add_box_rounded),
-          // _buildDrawerListTile('View Records', Icons.view_list),
-          // _buildDrawerListTile('View Doctors', Icons.view_list),
-          // _buildDrawerListTile('View Nurses', Icons.view_list),
-          // _buildDrawerListTile('View Patients', Icons.view_list),
-          _buildDrawerListTile('Settings', Icons.settings),
-          _buildDrawerListTile('FAQ', Icons.question_mark_rounded),
-          _buildDrawerListTile('About Us', Icons.people_alt_rounded),
-          _buildDrawerListTile('Contact Us', Icons.phone_in_talk_rounded),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDrawerListTile(String title, IconData icon) {
-    return ListTile(
-      leading: Icon(icon),
-      title: Text(title),
-      onTap: () {
-        Navigator.pop(context);
-      },
     );
   }
 }
